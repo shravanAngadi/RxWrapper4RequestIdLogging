@@ -1,4 +1,4 @@
-/*
+package aw.operation;/*
  * Copyright © 2014 AirWatch, LLC. All rights reserved.
  * This product is protected by copyright and intellectual property laws
  * in the United States and other countries as well as by international treaties.
@@ -22,14 +22,15 @@ import java.util.Random;
 /**
  * Created by sangadi on 5/10/2016.
  */
-public class Main {
+public class RandomFetchV0 {
 
-    final static Logger log = LoggerFactory.getLogger(Main.class);
+    final static Logger log = LoggerFactory.getLogger(RandomFetchV0.class);
 
 
     public static void main(String[] args) {
         Vertx vertx = Vertx.vertx();
-        log.trace("trace");
+        log.info("trace");
+        log.debug("debug");
 
         HttpServerOptions options = new HttpServerOptions();
         options.setPort(2036);

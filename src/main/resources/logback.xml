@@ -12,15 +12,15 @@
 
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d kk %X{requestId} %p \(%t\) [%c] - %m%n</pattern>
+            <pattern>%d %X{requestId} %p \(%t\) [%c] - %m%n</pattern>
         </encoder>
     </appender>
 
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
-        <File>/var/log/airwatch/test/rfs-web.log</File>
+        <File>/var/log/airwatch/test/rx-wrapper.log</File>
         <encoder>
-            <pattern>%d kk %X{requestId} %p \(%t\) [%c] - %m%n</pattern>
+            <pattern>%d %X{requestId} %p \(%t\) [%c] - %m%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
             <maxIndex>40</maxIndex>
@@ -31,11 +31,12 @@
         </triggeringPolicy>
     </appender>
 
-    <logger name="com.airwatch" level="TRACE"/>
+    <logger name="aw" level="info"/>
 
 
-    <root level="TRACE">
+    <root level="info">
         <appender-ref ref="file"/>
+        <appender-ref ref="stdout"/>
     </root>
 
 </configuration>
