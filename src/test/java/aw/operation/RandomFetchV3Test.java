@@ -17,13 +17,14 @@ public class RandomFetchV3Test {
     final Logger log = LoggerFactory.getLogger(RandomFetchV3.class);
 
     @Test
-    public void main() throws Exception {
+    public void testMain() throws Exception {
+        int count = 5;
         int i = 0;
         do {
             makeRequest(getRequest());
             i++;
-        } while (i < 2);
-        Thread.sleep(250000);
+        } while (i < count);
+        Thread.sleep(count * 20_000);
     }
 
     private HttpClientRequest getRequest() {
